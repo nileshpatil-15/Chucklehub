@@ -45,7 +45,8 @@ function LoginForm() {
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
-                    value: /^\S+@\S+$/i,
+                    value: /^[\w-]+(\.[\w-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/
+                    ,
                     message: "Invalid email address",
                   },
                 })}
