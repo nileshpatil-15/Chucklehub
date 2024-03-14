@@ -9,10 +9,10 @@ Welcome to the Joke Application! This application is designed to provide users w
 
 
 Technologies Used
-React
-Vite
-Bootstrap
-REST API
+1]React
+2]Vite
+3]Bootstrap
+4]REST API
 
 
 
