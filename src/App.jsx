@@ -11,7 +11,7 @@ import Home from "./root/pages/Home";
 import RootLayout from "./root/RootLayout";
 function App() {
   return (
-    <main className=" d-flex vh-100">
+    <main className="  vh-100  ">
       <Routes>
         <Route element={<AuthLayout />}>
           <Route index  element={<LoginForm/>}/>
