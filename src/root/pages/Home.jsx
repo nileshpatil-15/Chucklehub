@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { JOKES } from '../../constants/apiendpoints';
-
+import { Spinner } from 'react-bootstrap';
 const Home = () => {
-  const [userData, setUserData] = useState([]);
+  const [jokes, setJokes] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -12,7 +12,7 @@ const Home = () => {
   const fetchData = () => {
     axios.get(JOKES)
       .then(response => {
-        setUserData(response.data.jokes);
+        setJokes(response.data.jokes);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -20,9 +20,13 @@ const Home = () => {
   };
 
   return (
-    <div className="container mt-5">
-    <h1>Users Data</h1>
-    <table className="table table-striped table-bordered">
+    <div className="container mt-5 d-flex justify-content-center align-items-center flex-column ">
+      <h5>please refresh the page to read updated jokes</h5>
+
+{jokes.length>0? (
+  
+ 
+   <table className="table table-striped table-bordered">
       <thead className="thead-dark">
         <tr>
           <th scope="col">Sr.No</th>
@@ -31,7 +35,7 @@ const Home = () => {
         </tr>
       </thead>
       <tbody>
-        {userData?.map((user,index) => (
+        {jokes?.map((user,index) => (
         <tr key={index}>
           <td>{index+1}</td>
           <td>{user.category}</td>
@@ -39,7 +43,12 @@ const Home = () => {
         </tr>
         ))}
       </tbody>
-    </table>
+    </table>)
+    
+    :(     <Spinner animation="border" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </Spinner>)}
+  
   </div>
   
   );
