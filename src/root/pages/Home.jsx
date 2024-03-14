@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { JOKES } from '../../constants/apiendpoints';
-import { Spinner } from 'react-bootstrap';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { JOKES } from "../../constants/apiendpoints";
+import { Spinner } from "react-bootstrap";
 
 const Home = () => {
   const [jokes, setJokes] = useState([]);
@@ -11,12 +11,13 @@ const Home = () => {
   }, []);
 
   const fetchData = () => {
-    axios.get(JOKES)
-      .then(response => {
+    axios
+      .get(JOKES)
+      .then((response) => {
         setJokes(response.data.jokes);
       })
-      .catch(error => {
-        console.error('Error fetching data:', error);
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
   };
 
@@ -30,7 +31,9 @@ const Home = () => {
             <tr>
               <th scope="col">Sr.No</th>
               <th scope="col">Category</th>
-              <th className="text-center" scope="col">Joke</th>
+              <th className="text-center" scope="col">
+                Joke
+              </th>
             </tr>
           </thead>
           <tbody>

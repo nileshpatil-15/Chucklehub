@@ -1,12 +1,10 @@
-
-:root{
+:root {
   min-height: 100vh;
 }
-body{
+body {
   min-height: 100vh;
- box-sizing:border-box;
- padding: 0;
- margin: 0;
- font-family: 'Montserrat',sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
-
