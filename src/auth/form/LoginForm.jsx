@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {useNavigate} from 'react-router-dom'
 function LoginForm() {
   const[sumbit,setSubmit]=useState(false)
   const { register, handleSubmit, formState: { errors } } = useForm();
 const navigate=useNavigate()
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     setSubmit(true)
     setTimeout(()=>{
       navigate('/home')
@@ -13,15 +13,18 @@ const navigate=useNavigate()
   };
 
   return (
-    <div className="container">
+    <div className="container  ">
       <div className="row justify-content-center mt-5">
-        <div className="col-md-6">
+        <div className="col-md-6 col-10">
           <form onSubmit={handleSubmit(onSubmit)} className="p-4 shadow rounded bg-light">
-            {/* Email field */}
+            {/* Email field */} 
             <div className="form-group">
-              <h3 className='text-center '>Chucklehub</h3>
-              <label htmlFor="email">Email</label>
-              <input
+             <div className='text-center'>
+             <img className='img-fluid' src='/redesigned-the-chuckle-sandwich-logo-what-are-we-thinking-v0-0kovvehs1cw91.jpg' alt='Logo' style={{ width: '250px', height: '100px' }} />
+             </div>
+             <label htmlFor="email">Email</label>
+
+                <input
                 type="email"
                 className={`mb-2 form-control ${errors.email ? 'is-invalid' : ''}`}
                 id="email"

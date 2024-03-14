@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 
 const Footer = () => {
   return (
-    <footer className="footer bg-dark text-white px-2 py-1 ">
+    <footer className="footer bg-dark text-white px-2 py-1  ">
     <div className="d-flex justify-content-between">
     <div className="w-50 text-center">
           <h5>About Us</h5>

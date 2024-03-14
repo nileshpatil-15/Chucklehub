@@ -9,6 +9,7 @@ import AuthLayout from "./auth/AuthLayout";
 import LoginForm from "./auth/form/LoginForm";
 import Home from "./root/pages/Home";
 import RootLayout from "./root/RootLayout";
+import NotFound from "./component/NotFound";
 function App() {
   return (
     <main className="  vh-100  ">
@@ -19,6 +20,7 @@ function App() {
         <Route element={<RootLayout />}>
           <Route path={"/home"}  element={<Home />} />
         </Route>
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </main>
   );
