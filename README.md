@@ -8,6 +8,7 @@ Welcome to the Joke Application! This application is designed to provide users w
 
 
 
+
 Technologies Used
 1]React
 2]Vite
